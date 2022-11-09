@@ -734,7 +734,7 @@ class LpaDiagnostics( OpenPMDTimeSeries ):
             Either `t` or `iteration` should be given by the user.
 
         pol : string
-            Polarization of the field. Options are 'x', 'y'
+            Polarization of the field. Options are 'x', 'y', 'z'
 
         m : int or str, optional
            Only used for thetaMode geometry
@@ -754,7 +754,7 @@ class LpaDiagnostics( OpenPMDTimeSeries ):
             - A FieldMetaInformation object
         """
         # Check if polarization has been entered
-        if pol not in ['x', 'y']:
+        if pol not in ['x', 'y', 'z']:
             raise ValueError('The `pol` argument is missing or erroneous.')
         # Get a lineout along the 'z' axis,
         slice_across = self._get_slicing_for_longitudinal_lineout()
